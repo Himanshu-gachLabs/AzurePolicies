@@ -7,7 +7,7 @@
         "policyRule": {
             "if": {
                 "field": "type",
-                "equals": "Data factory (V2)"
+                "in": "['Data factory (V2)']"
             },
             "then": {
                 "effect": "auditIfNotExists",
