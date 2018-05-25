@@ -1,13 +1,22 @@
 {
-    "name": "FactoryMonitoring",
+    "name": "audit-diagnostic-setting",
     "properties": {
         "displayName": "Audit diagnostic setting",
         "description": "Audit diagnostic setting for selected resource types",
         "mode": "all",
+        "parameters": {
+            "listOfResourceTypes": {
+                "type": "Array",
+                "metadata": {
+                    "displayName": "Resource Types",
+                    "strongType": "resourceTypes"
+                }
+            }
+        },
         "policyRule": {
             "if": {
                 "field": "type",
-                "equals": "Data Factory"
+                "in": "[parameters('listOfResourceTypes')]"
             },
             "then": {
                 "effect": "auditIfNotExists",
