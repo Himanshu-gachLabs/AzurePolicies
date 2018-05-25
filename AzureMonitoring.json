@@ -1,0 +1,32 @@
+{
+    "name": "audit-diagnostic-setting",
+    "properties": {
+        "displayName": "Audit diagnostic setting",
+        "description": "Audit diagnostic setting for selected resource types",
+        "mode": "all",
+        "policyRule": {
+            "if": {
+                "field": "type",
+                "equals": "Data factory (V2)"
+            },
+            "then": {
+                "effect": "auditIfNotExists",
+                "details": {
+                    "type": "Microsoft.Insights/diagnosticSettings",
+                    "existenceCondition": {
+                        "allOf": [
+                            {
+                                "field": "Microsoft.Insights/diagnosticSettings/logs.enabled",
+                                "equals": "true"
+                            },
+                            {
+                                "field": "Microsoft.Insights/diagnosticSettings/metrics.enabled",
+                                "equals": "true"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
