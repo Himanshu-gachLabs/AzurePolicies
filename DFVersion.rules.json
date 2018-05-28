@@ -1,7 +1,7 @@
 {
 	 "if": {
-                "field": "type",
-                "equals": "Data factory"
+                "field": "version",
+                "equals": "V1"
             },
 	"then": {
 		"effect": "deny"
