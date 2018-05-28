@@ -1,7 +1,7 @@
 {
 	 "if": {
-                "field": "Microsoft.DataFactory/factories.version",
-                "equals": "V1"
+                "field": "Microsoft.DataFactory/factories.apiVersion",
+                "equals": "2017-09-01-preview"
             },
 	"then": {
 		"effect": "deny"
