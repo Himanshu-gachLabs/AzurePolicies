@@ -1,6 +1,6 @@
 {
 	 "if": {
-                "field": "version",
+                "field": "Microsoft.DataFactory.Version",
                 "equals": "V1"
             },
 	"then": {
