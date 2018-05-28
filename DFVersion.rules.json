@@ -1,6 +1,10 @@
 {
 	 "if": {
+<<<<<<< HEAD
                 "field": "Microsoft.DataFactory/factories.version",
+=======
+                "field": "Microsoft.DataFactory/factories/apiVersion",
+>>>>>>> 37cd3e7a122281162b41b3b40a90e6034bbb9a99
                 "equals": "2015-10-01"
             },
 	"then": {
