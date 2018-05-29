@@ -1,9 +1,17 @@
 {
 	 "if": {
-                "field": "Microsoft.DataFactory/factories.version",
-                "equals": "2015-10-01"
-            },
-	"then": {
-		"effect": "deny"
+    "allOf": [
+      {
+        "field": "type",
+        "equals": "Microsoft.DataFactory/factories"
+      },
+      {
+        "field": "name",
+        "contains": "him"
 	}
+    ]
+  },
+  "then": {
+    "effect": "deny"
+  }
 }

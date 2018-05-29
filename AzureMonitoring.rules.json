@@ -1,7 +1,7 @@
 {
 	 "if": {
                 "field": "type",
-                "equals": "Data factory (V2)"
+                "equals": "Microsoft.DataFactory/factories"
             },
 	"then": {
 		"effect": "auditIfNotExists",
