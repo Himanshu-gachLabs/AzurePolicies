@@ -1,0 +1,17 @@
+New-AzureRmPolicyDefinition -Policy '{
+	 "if": {
+    "allOf": [
+      {
+        "field": "type",
+        "equals": "Microsoft.DataFactory/factories"
+      },
+      {
+        "field": "name",
+        "contains": "him"
+	}
+    ]
+  },
+  "then": {
+    "effect": "deny"
+  }
+}' -Name 'DataFactoryVersionRestriction'

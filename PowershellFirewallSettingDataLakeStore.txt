@@ -1,0 +1,8 @@
+$adls = "adlsa03"
+$ruleName = "TurnFirewallOnforIPs"
+$startIpAddress = "144.5.0.0"
+$endIpAddress = "144.5.255.255"
+
+Set-AzureRmDataLakeStoreAccount -Name $adls -FirewallState Enabled
+
+Add-AdlStoreFirewallRule -AccountName $adls -Name $ruleName -StartIpAddress $startIpAddress -EndIpAddress $endIpAddress

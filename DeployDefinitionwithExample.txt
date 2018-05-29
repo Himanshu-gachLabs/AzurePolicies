@@ -1,0 +1,27 @@
+New-AzureRmPolicyDefinition -Policy 'https://raw.githubusercontent.com/Himanshu-gachLabs/AzurePolicies/master/DFVersion.rules.json' -Name 'DataFactoryVersionRestriction'
+
+
+$rg = Get-AzureRmResourceGroup -Name "ADFQuickStartRG"
+$definition = Get-AzureRmPolicyDefinition | Where-Object { $_.Name -eq 'DataFactoryVersionRestriction' }
+New-AzureRmPolicyAssignment -Name 'Data Factory Version Restriction' -Scope $rg.ResourceId -PolicyDefinition $definition
+
+
+
+
+New-AzureRmPolicyDefinition -Policy '{
+	 "if": {
+    "allOf": [
+      {
+        "field": "type",
+        "equals": "Microsoft.DataFactory/factories"
+      },
+      {
+        "field": "Microsoft.DataFactory/?apiversion",
+        "equals": "Data factory(V2)"
+      }
+    ]
+  },
+  "then": {
+    "effect": "deny"
+  }
+}' -Name 'DataFactoryVersionRestriction'

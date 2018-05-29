@@ -1,0 +1,13 @@
+{
+	 "if": {
+                "field": "type",
+                "equals": "Microsoft.DataLakeStore/accounts/firewallRules"
+            },
+	"then": {
+		"effect": "Append",
+		"details": {
+			
+			}
+		}
+	}
+}
